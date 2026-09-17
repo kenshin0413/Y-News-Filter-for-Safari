@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct Y_News_Filter_for_SafariApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()

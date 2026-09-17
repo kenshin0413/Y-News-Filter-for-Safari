@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Y!News Filter</title>
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <main>
+    <header>
+      <img class="app-icon" src="icon.svg" alt="">
+      <div>
+        <h1>News Filter</h1>
+        <p id="usage">0 / 5 ワード</p>
+      </div>
+      <label class="switch" aria-label="フィルターを切り替える">
+        <input id="enabled" type="checkbox">
+        <span></span>
+      </label>
+    </header>
+
+    <section id="limit-guide" hidden>
+      <strong>登録枠がいっぱいです</strong>
+      <p>本体アプリで広告を見ると、除外ワード枠を1つ永久解放できます。</p>
+      <a href="ynfilter://unlock">アプリで広告を見て＋1枠解放</a>
+    </section>
+
+    <form id="add-form">
+      <input id="word" type="text" maxlength="80" placeholder="除外ワードを追加" autocomplete="off">
+      <button type="submit">追加</button>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+    <ul id="word-list" aria-label="登録済みの除外ワード"></ul>
+    <div id="empty">除外ワードはありません</div>
+  </main>
+</body>
+</html>

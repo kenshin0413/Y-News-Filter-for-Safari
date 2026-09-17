@@ -1,0 +1,53 @@
+:root {
+  color-scheme: light dark;
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  --accent: #5b55d6;
+  --danger: #d93d45;
+  --surface: rgba(128, 128, 128, 0.10);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; min-height: 240px; }
+body { min-width: 320px; }
+main { width: 100%; max-width: 360px; margin: 0 auto; padding: 16px; }
+header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+.app-icon {
+  display: block; width: 42px; height: 42px;
+  border-radius: 11px; object-fit: cover;
+}
+header div:nth-child(2) { flex: 1; }
+h1 { margin: 0; font-size: 18px; }
+header p { margin: 2px 0 0; color: #7a7a80; font-size: 12px; }
+form { display: flex; gap: 8px; }
+input[type="text"] {
+  flex: 1; min-width: 0; padding: 10px 12px; border-radius: 10px;
+  border: 1px solid rgba(128,128,128,.35); background: transparent; font-size: 15px;
+}
+button, #limit-guide a {
+  border: 0; border-radius: 10px; padding: 10px 14px; color: white;
+  background: var(--accent); font: inherit; font-weight: 600; text-decoration: none; cursor: pointer;
+}
+#message { margin: 7px 2px 3px; color: var(--danger); font-size: 12px; }
+#message:empty { display: none; }
+ul { list-style: none; margin: 0; padding: 0; }
+#word-list { margin-top: 12px; }
+li { display: flex; align-items: center; gap: 8px; padding: 8px 4px; border-bottom: 1px solid rgba(128,128,128,.18); }
+li span { flex: 1; overflow-wrap: anywhere; }
+li .delete-button {
+  min-width: 52px; padding: 7px 10px; border: 1px solid rgba(217, 61, 69, .24);
+  border-radius: 9px; color: var(--danger); background: rgba(217, 61, 69, .09);
+  font-size: 13px; font-weight: 700;
+}
+li .delete-button:active { background: rgba(217, 61, 69, .18); }
+#empty { padding: 24px 0; color: #888; text-align: center; font-size: 13px; }
+#limit-guide { margin: -2px 0 12px; padding: 12px; border-radius: 12px; background: var(--surface); }
+#limit-guide strong { font-size: 14px; }
+#limit-guide p { margin: 5px 0 12px; color: #777; font-size: 12px; line-height: 1.45; }
+#limit-guide a { display: block; text-align: center; }
+.switch { position: relative; width: 46px; height: 28px; }
+.switch input { opacity: 0; width: 0; height: 0; }
+.switch span { position: absolute; inset: 0; border-radius: 14px; background: #aaa; transition: .2s; }
+.switch span::before { content: ""; position: absolute; width: 24px; height: 24px; left: 2px; top: 2px; border-radius: 50%; background: white; box-shadow: 0 1px 4px #5557; transition: .2s; }
+.switch input:checked + span { background: var(--accent); }
+.switch input:checked + span::before { transform: translateX(18px); }
+@media (prefers-color-scheme: dark) { header p, #limit-guide p { color: #aaa; } }
