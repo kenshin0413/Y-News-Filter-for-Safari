@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Y!News Filter",
+  "description": "登録した除外ワードを含むYahoo!ニュースの記事を非表示にします。",
+  "version": "1.0.0",
+  "icons": {
+    "48": "icon.svg",
+    "96": "icon.svg",
+    "128": "icon.svg"
+  },
+  "permissions": ["nativeMessaging"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://yahoo.co.jp/*",
+        "https://www.yahoo.co.jp/*",
+        "https://m.yahoo.co.jp/*",
+        "https://news.yahoo.co.jp/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "Y!News Filter",
+    "default_popup": "popup.html",
+    "default_icon": "icon.svg"
+  }
+}
